@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MYPLOTTER", "MYPLOTTER.pyproj", "{9BB8B05E-808D-4C5A-AF1E-DE29F749508B}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonFunctionPlotter", "PythonFunctionPlotter.pyproj", "{9BB8B05E-808D-4C5A-AF1E-DE29F749508B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
