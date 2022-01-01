@@ -62,22 +62,22 @@ class Ui(QWidget):# Inherit from QWidget
 
              func_exp,minval,maxval = self.validateInputs(function,min_value,max_value)
              #graph_plot = Graph(func_exp,minval,maxval)
+             if min_value<max_value:
+                 seriesX = np.linspace(minval, maxval) # to create  sequences from min to max on X
+                 # convert String to Expression
+                 x = symbols("x") # create a variable to use in mathmatical expression
+                 y = sympify(func_exp) # to convert string expression  to SymPy expression to be able to substitue with x and get y for each value 
 
-             seriesX = np.linspace(minval, maxval) # to create  sequences from min to max on X
-             # convert String to Expression
-             x = symbols("x") # create a variable to use in mathmatical expression
-             y = sympify(func_exp) # to convert string expression  to SymPy expression to be able to substitue with x and get y for each value 
-
-             # convert Expression to function to be able to get y for each x
-             fx = lambdify(x, y, modules=["numpy"])
-             seriesY =fx(seriesX)
-             self.graph.clear()
-             self.graph.plot(seriesX, seriesY, pen="r")
+                 # convert Expression to function to be able to get y for each x
+                 fx = lambdify(x, y, modules=["numpy"])
+                 seriesY =fx(seriesX)
+                 self.graph.clear()
+                 self.graph.plot(seriesX, seriesY, pen="r")
         except:
              return
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv) # to do
+    app = QtWidgets.QApplication(sys.argv)
     window = Ui()
     window.show() # use an inherited Method to show  
     sys.exit(app.exec_())
